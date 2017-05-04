@@ -4,11 +4,12 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <list>
 using namespace std;
 
 class Map
 {
-  vector< vector< pair<string,int>* >* > array;
+  vector< list< pair<string,int>* >* > array;
     public:
         Map();
         void put(string key, int value);
