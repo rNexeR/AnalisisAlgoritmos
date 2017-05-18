@@ -16,7 +16,7 @@ vector<int> removeTopFromHeap(vector<int> heap)
   answer = heap;
 
   answer[0] = answer[answer.size()-1];
-  answer.erase(answer.begin()+answer.size()-1);
+  answer.pop_back();
 
   uint current = 0;
   while(current < answer.size()){

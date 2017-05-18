@@ -45,12 +45,12 @@ bool Map::exists(string key)
 void Map::remove(string key)
 {
   list< pair<string, int>* > * v =  array[hash(key)];
-  list< pair<string, int>* >::iterator to_delete;
   for(list< pair<string, int>* >::iterator i = v->begin(); i != v->end(); i++)
   {
     pair<string, int>* current_pair = *i;
-    if(current_pair->first == key)
-      to_delete = i;
+    if(current_pair->first == key){
+      v->erase(i);
+      break;
+    }
   }
-  v->erase(to_delete);
 }
