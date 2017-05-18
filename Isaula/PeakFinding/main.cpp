@@ -53,6 +53,26 @@ int findPeak(vector<int> numbers)
     return 0;
 }
 
+
+int findPeakAHMED(vector<int> numbers, int begin, int end)
+{
+  int current = begin + (end-begin)/2;
+  if(current >= 0 && numbers[current] < numbers[current-1])
+  {
+    return findPeakAHMED(numbers,begin,current);
+  }
+  if(current < numbers.size()-1 && numbers[current] < numbers[current+1])
+  {
+    return findPeakAHMED(numbers,current,end);
+  }
+  return current;
+}
+
+int findPeakAHMED(vector<int> numbers)
+{
+  return findPeakAHMED(numbers,0,numbers.size()-1);
+}
+
 int main ()
 {
     //Funcion evaluadora
