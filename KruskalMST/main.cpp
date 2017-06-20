@@ -53,6 +53,7 @@ int **getKruskalMST(int **graph, int size, vector<Edge *> edges)
     {
         new_graph[i] = new int[size];
         memset(new_graph[i], -1, size * s_o_int);
+        
     }
 
     for (int i = 0; i < edges.size(); i++)
